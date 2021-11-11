@@ -28,7 +28,7 @@ console.log(calcArea(51, 1)); // ok
 function splitSentence() {
   let sentence = 'go Trybe';
   
-  return sentence.split(".");
+  return sentence.split(" ");
 
 }
 console.log(splitSentence()); //ok
