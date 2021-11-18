@@ -1,5 +1,3 @@
-// lembrar de apagar os console.log e comentarios desnecessarios
-
 // Desafio 1
 function compareTrue(valor1, valor2) {
   let resultado;
@@ -10,7 +8,6 @@ function compareTrue(valor1, valor2) {
   }
   return resultado;
 }
-console.log(compareTrue(true, true)); // ok
 
 // Desafio 2
 function calcArea(base, height) {
@@ -18,9 +15,6 @@ function calcArea(base, height) {
 
   return area;
 }
-console.log(calcArea(10, 50));
-console.log(calcArea(5, 2));
-console.log(calcArea(51, 1)); // ok
 
 // Desafio 3
 // consultei o método split no DevMedia
@@ -28,24 +22,20 @@ console.log(calcArea(51, 1)); // ok
 function splitSentence(string) {
   return string.split(' ');
 }
-console.log(splitSentence('go trybe')); // ok
 
 // Desafio 4
 // consultei como pegar itens no StackOverflow
 // Link: https://stackoverflow.com/questions/43714111/get-the-first-and-last-item-in-an-array-js/43714143
 function concatName(arrNames) {
-  let firstElement = arrNames[0];
+  let firstElement = arrNames[0]; // posição 0 pois começa no 0
   let lastElement = arrNames[arrNames.length - 1];
-  let lastAndFirst = lastElement + ', ' + firstElement;
+  let lastAndFirst = `${lastElement}, ${firstElement}`;
 
   return lastAndFirst;
 }
-console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo'])); // ok
 
 // Desafio 5
 function footballPoints(wins, ties) {
-  // para cada vitoria soma 3 pontos - wins * 3
-  // para cada empate soma 1 ponto - ties * 1
   let winsPoints = wins * 3;
   let tiesPoints = ties;
   let totalPoints = winsPoints + tiesPoints;
@@ -53,27 +43,39 @@ function footballPoints(wins, ties) {
   return totalPoints;
 }
 
-console.log(footballPoints(14, 8));
-console.log(footballPoints(1, 2));
-console.log(footballPoints(0, 0)); // ok
-
 // Desafio 6
-function highestCount() {
-  // seu código aqui
-  // ainda nao
+function highestCount(arrNumbers) {
+  let maiorNumero = 0;
+  let maiorNumeroRepetido = 0;
+
+  for (let numero of arrNumbers) {
+    if (numero > maiorNumero) {
+      maiorNumero = numero;
+    }
+  }
+  for (let numero of arrNumbers) {
+    if (maiorNumero === numero) {
+      maiorNumeroRepetido += 1;
+    }
+  }
+  return maiorNumeroRepetido;
 }
 
-// Desafio 7
-function catAndMouse(cat1, cat2, mouse) {
-  if (cat1 === mouse - 3 && cat2 === mouse - 2) {
-    return 'cat2';
-  } else if (cat1 === mouse - 6 && cat2 === mouse - 12) {
+// Desafio 7 - procurar metodo math.abs
+// consultei método Math.abs
+// Link: https://www.w3schools.com/jsref/jsref_abs.asp
+function catAndMouse(mouse, cat1, cat2) {
+  const distanceCat1 = Math.abs(mouse - cat1);
+  const distanceCat2 = Math.abs(mouse - cat2);
+
+  if (distanceCat1 < distanceCat2) {
     return 'cat1';
-  } else if (cat1 === cat2) {
+  } else if (distanceCat2 < distanceCat1) {
+    return 'cat2';
+  } else {
     return 'os gatos trombam e o rato foge';
   }
 }
-console.log(catAndMouse(44, 38, 50));
 
 // Desafio 8
 function fizzBuzz() {
@@ -81,11 +83,58 @@ function fizzBuzz() {
 }
 
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(stringEncode) {
+  let resultado = '';
+
+  for (let letra of stringEncode) {
+    switch (letra) {
+      case 'a':
+        resultado += '1';
+        break;
+      case 'e':
+        resultado += '2';
+        break;
+      case 'i':
+        resultado += '3';
+        break;
+      case 'o':
+        resultado += '4';
+        break;
+      case 'u':
+        resultado += '5';
+        break;
+      default:
+        resultado += letra;
+    }
+  }
+  return resultado;
 }
-function decode() {
-  // seu código aqui
+
+function decode(stringDecode) {
+  let resultado = '';
+
+  for (let letra of stringDecode) {
+    switch (letra) {
+      case '1':
+        resultado += 'a';
+        break;
+      case '2':
+        resultado += 'e';
+        break;
+      case '3':
+        resultado += 'i';
+        break;
+      case '4':
+        resultado += 'o';
+        break;
+      case '5':
+        resultado += 'u';
+        break;
+      default:
+        resultado += letra;
+    }
+  }
+  return resultado;
 }
 
 module.exports = {
