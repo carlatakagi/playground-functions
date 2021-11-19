@@ -1,7 +1,7 @@
 // Desafio 10
 // consultei o método sort()
 // Link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-function techList(arrTech, nome) {
+function techList(arrTech, name) {
   if (arrTech.length === 0) {
     return 'Vazio!';
   }
@@ -12,7 +12,7 @@ function techList(arrTech, nome) {
   for (let tecnologia of arrTech) {
     listaTech.push({
       tech: tecnologia,
-      name: nome,
+      name,
     });
   }
   return listaTech;
