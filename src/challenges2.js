@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 // Desafio 10
 // consultei o método sort()
 // Link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
