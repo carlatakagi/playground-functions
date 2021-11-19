@@ -1,8 +1,7 @@
-/* eslint-disable object-shorthand */
 // Desafio 10
 // consultei o método sort()
 // Link: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-function techList(arrTech, name) {
+function techList(arrTech, nome) {
   if (arrTech.length === 0) {
     return 'Vazio!';
   }
@@ -13,7 +12,7 @@ function techList(arrTech, name) {
   for (let tecnologia of arrTech) {
     listaTech.push({
       tech: tecnologia,
-      name: name,
+      name: nome,
     });
   }
   return listaTech;
