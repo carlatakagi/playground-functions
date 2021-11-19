@@ -1,3 +1,6 @@
+/* eslint-disable max-lines-per-function */
+/* eslint-disable complexity */
+/* eslint-disable sonarjs/cognitive-complexity */
 // Desafio 1
 function compareTrue(valor1, valor2) {
   let resultado;
@@ -48,9 +51,9 @@ function highestCount(arrNumbers) {
   let maiorNumero = 0;
   let maiorNumeroRepetido = 0;
 
-  for (let numero of arrNumbers) {
-    if (numero > maiorNumero) {
-      maiorNumero = numero;
+  for (let contador = 0; contador < arrNumbers.length; contador += 1) {
+    if (arrNumbers[contador] > maiorNumero || contador === 0) {
+      maiorNumero = arrNumbers[contador];
     }
   }
   for (let numero of arrNumbers) {
@@ -70,41 +73,53 @@ function catAndMouse(mouse, cat1, cat2) {
 
   if (distanceCat1 < distanceCat2) {
     return 'cat1';
-  } else if (distanceCat2 < distanceCat1) {
+  } if (distanceCat2 < distanceCat1) {
     return 'cat2';
-  } else {
-    return 'os gatos trombam e o rato foge';
   }
+  return 'os gatos trombam e o rato foge';
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(arrNumbers) {
+  arrNumbers.join(',');
+  let resultado = [];
+
+  for (let number of arrNumbers) {
+    if (number % 3 === 0 && number % 5 === 0) {
+      resultado.push('fizzBuzz');
+    } else if (number % 5 === 0) {
+      resultado.push('buzz');
+    } else if (number % 3 === 0) {
+      resultado.push('fizz');
+    } else {
+      resultado.push('bug!');
+    }
+  }
+  return resultado;
 }
 
 // Desafio 9
 function encode(stringEncode) {
   let resultado = '';
-
   for (let letra of stringEncode) {
     switch (letra) {
-      case 'a':
-        resultado += '1';
-        break;
-      case 'e':
-        resultado += '2';
-        break;
-      case 'i':
-        resultado += '3';
-        break;
-      case 'o':
-        resultado += '4';
-        break;
-      case 'u':
-        resultado += '5';
-        break;
-      default:
-        resultado += letra;
+    case 'a':
+      resultado += '1';
+      break;
+    case 'e':
+      resultado += '2';
+      break;
+    case 'i':
+      resultado += '3';
+      break;
+    case 'o':
+      resultado += '4';
+      break;
+    case 'u':
+      resultado += '5';
+      break;
+    default:
+      resultado += letra;
     }
   }
   return resultado;
@@ -112,26 +127,25 @@ function encode(stringEncode) {
 
 function decode(stringDecode) {
   let resultado = '';
-
   for (let letra of stringDecode) {
     switch (letra) {
-      case '1':
-        resultado += 'a';
-        break;
-      case '2':
-        resultado += 'e';
-        break;
-      case '3':
-        resultado += 'i';
-        break;
-      case '4':
-        resultado += 'o';
-        break;
-      case '5':
-        resultado += 'u';
-        break;
-      default:
-        resultado += letra;
+    case '1':
+      resultado += 'a';
+      break;
+    case '2':
+      resultado += 'e';
+      break;
+    case '3':
+      resultado += 'i';
+      break;
+    case '4':
+      resultado += 'o';
+      break;
+    case '5':
+      resultado += 'u';
+      break;
+    default:
+      resultado += letra;
     }
   }
   return resultado;
