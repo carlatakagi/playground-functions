@@ -1,6 +1,3 @@
-/* eslint-disable max-lines-per-function */
-/* eslint-disable complexity */
-/* eslint-disable sonarjs/cognitive-complexity */
 // Desafio 1
 function compareTrue(valor1, valor2) {
   let resultado;
@@ -103,23 +100,17 @@ function encode(stringEncode) {
   let resultado = '';
   for (let letra of stringEncode) {
     switch (letra) {
-    case 'a':
-      resultado += '1';
+    case 'a': resultado += '1';
       break;
-    case 'e':
-      resultado += '2';
+    case 'e': resultado += '2';
       break;
-    case 'i':
-      resultado += '3';
+    case 'i': resultado += '3';
       break;
-    case 'o':
-      resultado += '4';
+    case 'o': resultado += '4';
       break;
-    case 'u':
-      resultado += '5';
+    case 'u': resultado += '5';
       break;
-    default:
-      resultado += letra;
+    default: resultado += letra;
     }
   }
   return resultado;
@@ -129,23 +120,17 @@ function decode(stringDecode) {
   let resultado = '';
   for (let letra of stringDecode) {
     switch (letra) {
-    case '1':
-      resultado += 'a';
+    case '1': resultado += 'a';
       break;
-    case '2':
-      resultado += 'e';
+    case '2': resultado += 'e';
       break;
-    case '3':
-      resultado += 'i';
+    case '3': resultado += 'i';
       break;
-    case '4':
-      resultado += 'o';
+    case '4': resultado += 'o';
       break;
-    case '5':
-      resultado += 'u';
+    case '5': resultado += 'u';
       break;
-    default:
-      resultado += letra;
+    default: resultado += letra;
     }
   }
   return resultado;
